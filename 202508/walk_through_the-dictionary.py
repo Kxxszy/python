@@ -5,7 +5,11 @@ favourite_languages={
     'david':'C++'
 }
 a=favourite_languages.items()
-print(a)
+print(list(a))
+b=favourite_languages.keys()
+print(list(b))
+c=favourite_languages.values()
+print(list(c))
 for k,v in favourite_languages.items():
     print('\nkey:'+k)
     print('value:'+v)
