@@ -1,2 +1,2 @@
 # python
-这是一个coder学习python的全程
+This is the whole of a python learner.
