@@ -26,7 +26,7 @@ def sm3_hash(data):
 def sha3_256_hash(data):
     """SHA3-256哈希函数"""
     return hashlib.sha3_256(data).digest()
-def test_avalanche_effect(hash_func, hash_name, data_length=256, num_trials=1000):
+def my_test_avalanche_effect(hash_func, hash_name, data_length=256, num_trials=1000):
     print(f"\n=== 正在测试 {hash_name} 的雪崩效应 ===")
     print(f"消息长度: {data_length} 比特")
     print(f"试验次数: {num_trials}")
@@ -60,9 +60,9 @@ def test_avalanche_effect(hash_func, hash_name, data_length=256, num_trials=1000
 if __name__ == "__main__":
     NUM_TRIALS = 1000
     # 测试 SHA3-256
-    sha3_avg, sha3_std = test_avalanche_effect(sha3_256_hash, "SHA3-256", num_trials=NUM_TRIALS)
+    sha3_avg, sha3_std = my_test_avalanche_effect(sha3_256_hash, "SHA3-256", num_trials=NUM_TRIALS)
     # 测试 SM3
-    sm3_avg, sm3_std = test_avalanche_effect(sm3_hash, "SM3", num_trials=NUM_TRIALS)
+    sm3_avg, sm3_std = my_test_avalanche_effect(sm3_hash, "SM3", num_trials=NUM_TRIALS)
     # 简单对比
     print(f"\n=== 简要对比 ===")
     print(f"SHA3-256 接近 50% 的程度: {abs(50.0 - sha3_avg):.4f}%")
